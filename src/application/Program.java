@@ -18,11 +18,17 @@ public class Program {
 		Seller seller = sellerDao.findById(3);		
 		System.out.println(seller);
 		
-		System.out.println("\n=== Test 2: Department findByDepartment ===");
+		System.out.println("\n=== Test 2: Seler findByDepartment ===");
 		Department dep = new Department(2, null);
 		List<Seller> listSeller = sellerDao.findByDepartment(dep);
 		for (Seller seller2 : listSeller) {
-			System.out.println(seller2.getName()+","+seller2.getDepartment().getName());
+			System.out.println("Seller: "+seller2.getName()+", Department: "+seller2.getDepartment().getId());
+		}
+		
+		System.out.println("\n=== Test 3: Seller findAll ===");
+		List<Seller> listSellerAll = sellerDao.findAll();
+		for (Seller seller2 : listSellerAll) {
+			System.out.println("Seller: "+seller2.getName()+", Department: "+seller2.getDepartment().getId());
 		}
 		
 		DB.closeConnection();
