@@ -43,6 +43,13 @@ public class Program {
 		} else {
 			System.out.println("done! inserted id: " + sellerInsert.getId());
 		}
+		
+		System.out.println("\n=== Test 5: Seller update ===");
+		seller = sellerDao.findById(24);
+		seller.setBaseSalary(seller.getBaseSalary() + 300.0);
+		sellerDao.update(seller);
+		
+		System.out.println("Done! update ok ! id altered: " + seller.getId());
 
 		DB.closeConnection();
 	}
