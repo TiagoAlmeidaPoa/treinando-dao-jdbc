@@ -50,6 +50,12 @@ public class Program {
 		sellerDao.update(seller);
 		
 		System.out.println("Done! update ok ! id altered: " + seller.getId());
+		
+		System.out.println("\n=== Test 6: Seller delete ===");
+		int id = 24;
+		sellerDao.deleteById(id);
+		
+		System.out.println("deleted id: "+id);
 
 		DB.closeConnection();
 	}
